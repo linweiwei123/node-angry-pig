@@ -1,0 +1,75 @@
+body{
+    background-color: #ffffff;
+    margin: 0;
+}
+.text-center{
+    text-align: center;
+}
+.footer{
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+    z-index: 100;
+    background-color: #ddd;
+}
+.footer>ul>li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px 10px;
+}
+a.active{
+    color: black;
+}
+.detail-component-wrapper{
+
+}
+.detail-component-wrapper .btn{
+    color: #fff;
+    background-color: chocolate;
+}
+.detail-component-wrapper .commitBox{
+    background-color: #ffffff;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border-bottom: 1px solid #dddddd;
+}
+.commitBox>*{
+    float: left;
+}
+.commitBox:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.detail-component-wrapper ul.tab-bar{
+    padding: 0;
+}
+.detail-component-wrapper ul.tab-bar li{
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}
+.detail-component-wrapper ul.tab-bar li.active{
+    border-bottom: 2px solid #61dafb;
+    color: #61dafb;
+}
+.detail-component-wrapper .avatar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+}
+.detail-component-wrapper .commitBox .rightBox{
+    display: inline-block;
+    text-align: left;
+    padding: 0.5rem;
+}
+.detail-component-wrapper .commitBox .commitText{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 15rem;
+    white-space: nowrap;
+}
