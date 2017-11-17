@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+module.exports = {
+    init:init
+};
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Exp1ress' });
-});
-
-module.exports = router;
+function init(app){
+  require('./home/index').init(app);
+  require('./playground/index').init(app);
+}
