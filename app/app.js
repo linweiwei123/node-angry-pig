@@ -5,8 +5,46 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = require('./routes');
+var mysql = require('mysql');
+var fs = require('fs');
+var rfs = require('rotating-file-stream');
+var error = require('debug')('angry-pig:error');
 
 var app = express();
+
+// 设置日志系统
+var logDirectory = path.join(__dirname,'log');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+// create a rotating write stream
+var accessLogStream = rfs('access.log', {
+    interval: '1d', // 每天输出日志
+    path: logDirectory
+});
+
+process.on('uncaughtException',function(err){
+    error("系统出错了！！！：" + (err.stack)||err);
+});
+
+/**
+ * 初始化 MySQL Connection
+ */
+global.db = mysql.createConnection({
+    port: '3306',
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'angry',
+    timezone: 'UTC',
+});
+db.connect();
+
+db.query(`
+    SET sql_mode = "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+`);
+
+
+app.use(logger('combined', {stream: accessLogStream}));
+app.use(logger('dev'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -14,7 +52,8 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
