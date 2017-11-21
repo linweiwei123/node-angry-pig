@@ -30,10 +30,10 @@ process.on('uncaughtException',function(err){
  */
 global.db = mysql.createConnection({
     port: '3306',
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'angry',
+    host: 'rm-2zezv7kb7kh5i53w68o.mysql.rds.aliyuncs.com',
+    user: 'ued',
+    password: 'HE5lBejvKOXO',
+    database: 'ued-nodejs',
     timezone: 'UTC',
 });
 db.connect();

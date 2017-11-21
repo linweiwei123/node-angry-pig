@@ -109,14 +109,3 @@ exports.count = function() {
         }); });
 };
 
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password :'root',
-    database: 'angry'
-});
-
-exports.create_mysql = function(params){
-    var sql = 'INSERT INTO Notes(title,body) VALUES(?,?)';
-    connection.query(sql,params||[]);
-}

@@ -1,7 +1,7 @@
-dbname: angry
-username: root
-password: root
+dbname: ued-nodejs
+username: ued
+password: HE5lBejvKOXO
 params:
-  host: localhost
+  host: rm-2zezv7kb7kh5i53w68o.mysql.rds.aliyuncs.com
   port: 3306
   dialect: mysql

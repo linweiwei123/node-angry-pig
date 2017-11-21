@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start-sequelize-mysql": "SEQUELIZE_CONNECT=models/sequelize-mysql.yaml NOTES_MODEL=models/notes-sequelize nodemon ./bin/www",
+    "start-sequelize-mysql": "set SEQUELIZE_CONNECT=models/sequelize-mysql.yaml&& set NOTES_MODEL=models/notes-sequelize && nodemon ./bin/www",
     "build:dev": "rimraf -- public && NODE_EVN=dev webpack --progress --profile",
     "build:prod": "rimraf -- public && NODE_EVN=prod webpack --profile"
   },
@@ -22,7 +22,9 @@
     "ejs": "~2.5.7",
     "express": "~4.15.5",
     "history": "3.3.0",
+    "joi": "^13.0.2",
     "js-yaml": "^3.10.0",
+    "meetyou-express-joi": "git+https://github.com/linweiwei123/meetyou-express-joi.git",
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
     "react": "^15.6.1",
