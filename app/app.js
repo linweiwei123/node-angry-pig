@@ -8,7 +8,7 @@ var router = require('./routes');
 var mysql = require('mysql');
 var fs = require('fs');
 var rfs = require('rotating-file-stream');
-var error = require('debug')('angry-pig:error');
+var error = require('debug')('express:error');
 
 var app = express();
 
@@ -70,7 +70,8 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+
+    // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 

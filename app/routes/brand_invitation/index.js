@@ -2,22 +2,23 @@ var BrandMIDao = require('../../models/brand_meeting_invitation');
 var ExpressJoi = require('meetyou-express-joi');
 var Joi = require('joi');
 
-const log = require('debug')('angry-pig:sequelize-model');
-const error = require('debug')('angry-pig:error');
+const debug = require('debug')('express:sequelize-model');
+const debugError = require('debug')('express:error');
 
 var bodySchema = {
     body:{
         name:Joi.string().max(20).required(),
         company:Joi.string().max(60).required(),
         position:Joi.string().max(60).required(),
-        phone:Joi.string().length(13).required(),
+        phone:Joi.string().length(11).required(),
         email:Joi.string().email().max(50).required()
     }
 }
 
 function init(app){
     app.post('/brand_invitation/save',ExpressJoi(bodySchema),(req,res,next)=>{
-        console.log(req.body);
+        debug('debug out *****');
+        debug(req.body);
         var params = req.body;
         BrandMIDao.create(params)
             .then((response)=>{
@@ -30,8 +31,7 @@ function init(app){
                 })
             })
             .catch((error)=>{
-                console.log(error);
-                log(error);
+                debugError(error);
                 res.status(500).send({
                     code:'2000',
                     data:'error',
