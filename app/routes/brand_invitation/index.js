@@ -4,24 +4,25 @@ var Joi = require('joi');
 
 const log = require('debug')('angry-pig:sequelize-model');
 const error = require('debug')('angry-pig:error');
+const logger = require('../../config/logger');
 
 var bodySchema = {
     body:{
         name:Joi.string().max(20).required(),
         company:Joi.string().max(60).required(),
         position:Joi.string().max(60).required(),
-        phone:Joi.string().length(13).required(),
+        phone:Joi.string().length(11).required(),
         email:Joi.string().email().max(50).required()
     }
 }
 
 function init(app){
     app.post('/brand_invitation/save',ExpressJoi(bodySchema),(req,res,next)=>{
-        console.log(req.body);
+        logger.debug('Debug something');
+        logger.error('程序错误');
         var params = req.body;
         BrandMIDao.create(params)
             .then((response)=>{
-                console.log(response);
                 res.status(201).send({
                     code:'1000',
                     data:'success',
@@ -30,8 +31,6 @@ function init(app){
                 })
             })
             .catch((error)=>{
-                console.log(error);
-                log(error);
                 res.status(500).send({
                     code:'2000',
                     data:'error',
