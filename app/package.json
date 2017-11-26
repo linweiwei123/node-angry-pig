@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start-sequelize-mysql": "set SEQUELIZE_CONNECT=models/sequelize-mysql.yaml&& set NOTES_MODEL=models/notes-sequelize && nodemon ./bin/www",
-    "start-sequelize-mysql:home": "DEBUG=express:* SEQUELIZE_CONNECT=models/sequelize-mysql-home.yaml NOTES_MODEL=models/notes-sequelize nodemon ./bin/www",
+    "start-sequelize-mysql": "set DEBUG=express:* && set SEQUELIZE_CONNECT=models/sequelize-mysql.yaml&& set NOTES_MODEL=models/notes-sequelize && nodemon ./bin/www",
     "build:dev": "rimraf -- public && NODE_EVN=dev webpack --progress --profile",
     "build:prod": "rimraf -- public && NODE_EVN=prod webpack --profile"
   },
@@ -19,7 +18,7 @@
     "body-parser": "~1.18.2",
     "chance": "^1.0.11",
     "cookie-parser": "~1.4.3",
-    "debug": "^2.6.9",
+    "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.15.5",
     "history": "3.3.0",
@@ -34,7 +33,8 @@
     "rotating-file-stream": "^1.3.4",
     "sequelize": "^3.30.4",
     "serve-favicon": "~2.4.5",
-    "superagent": "^3.6.3"
+    "superagent": "^3.6.3",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

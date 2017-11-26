@@ -2,8 +2,9 @@ var BrandMIDao = require('../../models/brand_meeting_invitation');
 var ExpressJoi = require('meetyou-express-joi');
 var Joi = require('joi');
 
-const debug = require('debug')('express:sequelize-model');
-const debugError = require('debug')('express:error');
+const log = require('debug')('angry-pig:sequelize-model');
+const error = require('debug')('angry-pig:error');
+const logger = require('../../config/logger');
 
 var bodySchema = {
     body:{
@@ -17,12 +18,11 @@ var bodySchema = {
 
 function init(app){
     app.post('/brand_invitation/save',ExpressJoi(bodySchema),(req,res,next)=>{
-        debug('debug out *****');
-        debug(req.body);
+        logger.debug('Debug something');
+        logger.error('程序错误');
         var params = req.body;
         BrandMIDao.create(params)
             .then((response)=>{
-                console.log(response);
                 res.status(201).send({
                     code:'1000',
                     data:'success',
@@ -31,7 +31,6 @@ function init(app){
                 })
             })
             .catch((error)=>{
-                debugError(error);
                 res.status(500).send({
                     code:'2000',
                     data:'error',
