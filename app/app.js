@@ -22,9 +22,10 @@ var accessLogStream = rfs('access.log', {
 });
 
 process.on('uncaughtException',function(err){
-    error("系统出错了！！！：" + (err.stack)||err);
+    error("今天天气不错了！！！：" + (err.stack)||err);
 });
 
+var a = '11212313';
 /**
  * 初始化 MySQL Connection
  */
