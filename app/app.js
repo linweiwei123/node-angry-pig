@@ -22,11 +22,11 @@ var accessLogStream = rfs('access.log', {
 });
 
 process.on('uncaughtException',function(err){
-    error("今天天气不错了！！！：" + (err.stack)||err);
+    error("我是郭书兴！！！：" + (err.stack)||err);
 });
 
-var a = 1000;
-var b = a+1;
+var a = '郭书兴提交';
+var b = a+10;
 /**
  * 初始化 MySQL Connection
  */
