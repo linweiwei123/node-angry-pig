@@ -22,7 +22,7 @@ var accessLogStream = rfs('access.log', {
 });
 
 process.on('uncaughtException',function(err){
-    error("hello world：" + (err.stack)||err);
+    error("今天天气不错了！！！：" + (err.stack)||err);
 });
 
 var a = 1000;
