@@ -22,7 +22,7 @@ var accessLogStream = rfs('access.log', {
 });
 
 process.on('uncaughtException',function(err){
-    error("系统出错了！！！：" + (err.stack)||err);
+    error("我是郭书兴！！！：" + (err.stack)||err);
 });
 
 var a = 'I am daibingquan';
