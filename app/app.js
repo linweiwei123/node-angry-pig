@@ -25,8 +25,8 @@ process.on('uncaughtException',function(err){
     error("我是郭书兴！！！：" + (err.stack)||err);
 });
 
-var a = '郭书兴提交';
-var b = a+10;
+var a = 'I am daibingquan';
+var b = a+100;
 /**
  * 初始化 MySQL Connection
  */
