@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .wrapper{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container{
+            margin-top: 5px;
+        }
+        .container:after{
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+        .page {
+            width: 45%;
+            margin: 0 2.5%;
+            float: left;
+        }
+        .page iframe{
+            height: 620px;
+            padding: 50px 18px 50px 25px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .iphone{
+            background-image: url("assets/iphonex2.png");
+            background-size: 350px;
+            background-repeat: no-repeat;
+            height: 690px;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="page">
+                <div class="iphone">
+                    <iframe src="http://localhost:3000/ori_medium" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="page">
+                <div class="iphone">
+                 <iframe src="http://localhost:3000/progress_medium" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

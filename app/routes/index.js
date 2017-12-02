@@ -6,4 +6,5 @@ function init(app){
   require('./home/index').init(app);
   require('./playground/index').init(app);
   require('./brand_invitation/index').init(app);
+  require('./pimage/index').init(app);
 }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #dddddd;
+            box-shadow: 2px 2px 5px #dddddd;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 150px;
+        }
+        .box img{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .placeholder-fill{
+            padding-bottom: 66.6%;
+        }
+        .box img:not(.lazyloaded){
+            filter: blur(20px)
+        }
+        .placeholder{
+            max-width: 1000px;
+            max-height: 787px;
+            background-color: #eeeeee;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            top:20px;
+            margin-bottom: 150px;
+            overflow: hidden;
+        }
+        .placeholder-fill{
+            padding-bottom: 66.67%;
+        }
+        .placeholder img{
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+        }
+        .placeholder img.loaded{
+            opacity: 1;
+        }
+        img.small-img{
+            filter: blur(10px);
+        }
+        img.progressiveMedia-noscript{
+            opacity: 1!important;
+        }
+        .page-header{
+            text-align: center;
+        }
+    </style>
+    <script type="application/javascript" src="js/lazysizes.min.js" async></script>
+
+</head>
+<body>
+    <div class="placeholder" data-large="http://ojp8ivtxn.bkt.clouddn.com/20171016_WechatIMG1424.jpeg">
+        <img class="small-img" src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" alt="">
+        <div class="placeholder-fill"></div>
+    </div>
+
+    <div class="placeholder" data-large="http://ojp8ivtxn.bkt.clouddn.com/20171016_WechatIMG1420.jpeg">
+        <img class="small-img" src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAATAA4DASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUCAwQH/8QAJBAAAgAFBAEFAAAAAAAAAAAAAQIAAwQFEQYSISJhQVFSccH/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/EABgRAAMBAQAAAAAAAAAAAAAAAAABERJB/9oADAMBAAIRAxEAPwDkOh9MDVExaVrjTUavPALN2ZcIexX4+YS6ltrWmpkUxnyZ4CEgoeR2Odw9D+Rq0jdDbptVufbLKhzld2cePbnML9ST2qbq7O29lVU3YxnAg17hc26U0XFVKxxk4P1EJ3d3ZuWLHJMEEPoj/9k=" alt="">
+        <div class="placeholder-fill"></div>
+    </div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20171016_WechatIMG1415.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20171016_WechatIMG1413.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20170922_WechatIMG245.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20171001_WechatIMG1257.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20170922_WechatIMG229.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20171001_WechatIMG1255.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <div class="box"><img src="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAA4DASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIDBAUREhMUISIzQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAG/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgMS/9oADAMBAAIRAxEAPwBJcrnXsklax3bqIB4ch6Z+5CL1tXuzncLtXvNO9qoExJByi118qH56VAXIiE0Lbn//2Q==" class="lazyload" data-src="http://ojp8ivtxn.bkt.clouddn.com/20171001_WechatIMG1252.jpeg" alt=""><div class="placeholder-fill"></div></div>
+    <script type="application/javascript">
+        var placeholder = document.querySelectorAll('.placeholder');
+        placeholder.forEach(function(item,index,arr){
+            (function(){
+                var component = item,img = new Image(),
+                    small = component.querySelector('.small-img');
+                img.src = small.src;
+                img.onload = function(){
+                    small.classList.add('loaded');
+                }
+                var large = new Image();
+                large.src = component.dataset.large;
+                component.append(large);
+                large.onload = function () {
+                    small.remove();
+                    large.classList.add('loaded');
+                }
+            }())
+        })
+    </script>
+</body>
+</html>
